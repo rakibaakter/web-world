@@ -48,7 +48,7 @@
     </div>
         <div class="row px-5">
             <div class="co-md-12 my-3 px-5">
-                <form action="" method="post" target="_blank" class="px-5">
+                <form action="" method="post" class="px-5">
 					<div class="form-group mt-2">
 						<label for="">Name</label>
                     	<input  type="text" name="userName" id="" class="form-control" placeholder="Enter your name" required>
@@ -87,19 +87,19 @@
 					<div class="form-group mt-3">
 						<label for="">Languages</label>
 						<br>
-						<input type="checkbox" name="lang[0]" id="">
+						<input type="checkbox" name="lang[]" id="" value="C++">
 						<label for="">C++</label>
-						<input type="checkbox" name="lang[1]" id="">
+						<input type="checkbox" name="lang[]" id="" value="Java">
 						<label for="">Java</label>
 						<br>
-						<input type="checkbox" name="lang[2]" id="">
+						<input type="checkbox" name="lang[]" id="" value="Python">
 						<label for="">Python</label>
-						<input type="checkbox" name="lang[3]" id="">
+						<input type="checkbox" name="lang[]" id="" value="PHP">
 						<label for="">PHP</label>
 						<br>
-						<input type="checkbox" name="lang[4]" id="">
+						<input type="checkbox" name="lang[]" id="" value="JavaScript">
 						<label for="">JavaScript</label>
-						<input type="checkbox" name="lang[5]" id="">
+						<input type="checkbox" name="lang[]" id="" value="C#">
 						<label for="">C#</label>
 					</div>
 					<div class="form-group mt-2">
