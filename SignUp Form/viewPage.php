@@ -1,16 +1,4 @@
-<?php
-if(isset($_POST['submit'])){
-    echo $name =$_POST['userName'];
-    echo $email =$_POST['userEmail'];
-    echo $password =$_POST['pass'];
-    echo $phoneNo =$_POST['phone'];
-    echo $cntry =$_POST['country'];
-    echo $gender =$_POST['gender'];
-    echo $language =$_POST['lang'];
-    echo $descript =$_POST['description'];
-    echo $profile =$_POST['userProfile'];
-}
-?>
+
 
 <?php
     include("header.php");

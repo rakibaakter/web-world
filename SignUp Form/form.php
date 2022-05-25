@@ -1,4 +1,41 @@
+<?php
+	$name ="";
+	$email ="";
+	$password ="";
+	$phoneNo ="";
+	$cntry ="";
+	$gender ="";
+	$language ="";
+	$descript ="";
+	$profile ="";
+	if(isset($_POST['submit'])){
+		$name =$_POST['userName'];
+		$email =$_POST['userEmail'];
+		$password =$_POST['pass'];
+		$phoneNo =$_POST['phone'];
+		$cntry =$_POST['country'];
+		$gender =$_POST['gender'];
+		$language =$_POST['lang'];
+		$descript =$_POST['description'];
+		$profile =$_POST['userProfile'];
 
+		$file_open = fopen("info.csv", "a");
+		$formData = array(
+			'name'=> $name,
+			'email' => $email,
+			'password' => $password,
+			'phone' => $phoneNo,
+			'country' => $cntry,
+			'gender' => $gender,
+			'lang' => $language,
+			'des' => $descript,
+			'profile' => $profile
+		);
+		fputcsv($file_open, $formData);
+
+	}
+
+?>
 
 <?php
     include("header.php");
@@ -11,18 +48,18 @@
     </div>
         <div class="row px-5">
             <div class="co-md-12 my-3 px-5">
-                <form action="viewPage.php" method="post" target="_blank" class="px-5">
+                <form action="" method="post" target="_blank" class="px-5">
 					<div class="form-group mt-2">
 						<label for="">Name</label>
-                    	<input  type="text" name="userName" id="" class="form-control" placeholder="Enter your name">
+                    	<input  type="text" name="userName" id="" class="form-control" placeholder="Enter your name" required>
 					</div>
                     <div class="form-group mt-2">
 						<label for="">Email</label>
-						<input type="email" name="userEmail" id="" class="form-control" placeholder="Enter your email address">
+						<input type="email" name="userEmail" id="" class="form-control" placeholder="Enter your email address" required>
 					</div>
 					<div class="form-group mt-2">
 						<label for="">Password</label>
-						<input type="password" name="pass" id="" class="form-control" placeholder="Enter your password">
+						<input type="password" name="pass" id="" class="form-control" placeholder="Enter your password" required>
 					</div>
 					<div class="form-group mt-2">
 						<label for="">Contact No</label>
