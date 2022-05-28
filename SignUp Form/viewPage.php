@@ -32,14 +32,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($rows >= 0){ ?>
+                    <?php 
+                        $i=0;
+                        for($i=0; $i<$rows; $i++){ ?>
                             <tr>
                                 <?php
-                                    foreach($record[$rows] as $item){ ?>
+                                    foreach($record[$i] as $item){ ?>
                                         <td><?=$item?></td>
                                 <?php } ?>
                             </tr>
-                            <?php $rows = $rows -1;
+                            <?php
                          }?>
                     
                 </tbody>

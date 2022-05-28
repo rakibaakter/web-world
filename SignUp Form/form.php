@@ -8,6 +8,9 @@
 	$language ="";
 	$descript ="";
 	$profile ="";
+	$checked =[];
+
+
 	if(isset($_POST['submit'])){
 		$name =$_POST['userName'];
 		$email =$_POST['userEmail'];
@@ -16,8 +19,19 @@
 		$cntry =$_POST['country'];
 		$gender =$_POST['gender'];
 		$language =$_POST['lang'];
+		foreach($language as $check){
+			$checked = $check;
+		}
+
 		$descript =$_POST['description'];
 		$profile =$_POST['userProfile'];
+
+		$target_dir="upload/";
+		$target_file = $target_dir.basename($_FILES["userProfile"]["userName"]);
+		$myFile = move_uploaded_file($_FILES["userProfile"]["userName"], $target_file);
+		$imageFileType =strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+		file_exists($target_file);
+
 
 		$file_open = fopen("info.csv", "a");
 		$formData = array(
@@ -27,9 +41,10 @@
 			'phone' => $phoneNo,
 			'country' => $cntry,
 			'gender' => $gender,
-			'lang' => $language,
+			'lang' => $checked,
+			
 			'des' => $descript,
-			'profile' => $profile
+			'profile' => $myFile
 		);
 		fputcsv($file_open, $formData);
 
@@ -48,7 +63,7 @@
     </div>
         <div class="row px-5">
             <div class="co-md-12 my-3 px-5">
-                <form action="" method="post" class="px-5">
+                <form action="" method="post" class="px-5" enctype="multipart/form-data">
 					<div class="form-group mt-2">
 						<label for="">Name</label>
                     	<input  type="text" name="userName" id="" class="form-control" placeholder="Enter your name" required>
